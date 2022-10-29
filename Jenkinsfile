@@ -1,12 +1,13 @@
 pipeline {
-    agent any
-	
+	agent { 
+	   label "slave"
+	}		
 
  stages {
       stage('checkout') {
            steps {
              
-                git branch: 'main', url: 'https://github.com/srikanta1219/devops-practical-2.git'
+                git branch: 'master', url: 'https://github.com/localmain/devops-practical-2.git'
              
           }
         }
