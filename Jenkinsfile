@@ -23,8 +23,8 @@ pipeline {
         }
   stage('Publish image to Docker Hub') {
             steps {
-      withCredentials([string(credentialsId: 'munna998', variable: 'DockerHub')]) {
-           sh  'docker push munna998/class:$BUILD_NUMBER' 
+                withCredentials([string(credentialsId: 'munna998', variable: 'DockerHub')]) {
+                sh  'docker push munna998/class:$BUILD_NUMBER' 
 		}
                   
           }
