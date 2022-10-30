@@ -23,7 +23,7 @@ pipeline {
         }
   stage('Publish image to Docker Hub') {
             steps {
-       withDockerRegistry(credentialsId: 'DockerHub', url: 'https://hub.docker.com/') {
+       withDockerRegistry(credentialsId: 'DockerHub', url: 'https://hub.docker.com') {
            sh  'docker push munna998/devops9class:$BUILD_NUMBER' 
 		}
                   
