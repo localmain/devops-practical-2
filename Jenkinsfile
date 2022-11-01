@@ -14,15 +14,15 @@ pipeline {
   stage('Docker Build and Tag') {
            steps {
               
-                sh 'docker build -t web:latest .' 
-                sh 'docker tag web munna998/web:$BUILD_NUMBER'
+                sh 'docker build -t dev:latest .' 
+                sh 'docker tag dev munna998/dev:$BUILD_NUMBER'
                
           }
         }
   stage('Publish image to Docker Hub') {
             steps {
 		    withDockerRegistry([credentialsId: "DockerHub", url: "" ]) {
-                    sh  'docker push munna998/web:$BUILD_NUMBER' 
+                    sh  'docker push munna998/dev:$BUILD_NUMBER' 
 		}
                   
           }
