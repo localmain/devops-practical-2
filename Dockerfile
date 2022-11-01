@@ -1,3 +1,3 @@
 FROM centos
-RUN  yum install httpd -y
+RUN  yum -y install httpd
 COPY index.html /var/www/html
